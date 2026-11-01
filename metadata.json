@@ -1,0 +1,6 @@
+{
+  "name": "MNIT Attendance",
+  "description": "Secure employee attendance portal with live GPS location verification, selfie capture, leave quota management, monthly attendance calendar, and offline synchronization.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

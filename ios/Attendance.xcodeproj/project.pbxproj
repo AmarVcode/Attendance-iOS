@@ -1,0 +1,452 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AA0100012900000100000001 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100012900000100000001 /* AppConfig.swift */; };
+		AA0100022900000100000001 /* AttendanceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100022900000100000001 /* AttendanceApp.swift */; };
+		AA0100032900000100000001 /* CameraCaptureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100032900000100000001 /* CameraCaptureView.swift */; };
+		AA0100042900000100000001 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100042900000100000001 /* LocationManager.swift */; };
+		AA0100052900000100000001 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100052900000100000001 /* APIClient.swift */; };
+		AA0100062900000100000001 /* APIEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100062900000100000001 /* APIEndpoints.swift */; };
+		AA0100072900000100000001 /* MultipartFormData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100072900000100000001 /* MultipartFormData.swift */; };
+		AA0100082900000100000001 /* NetworkMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100082900000100000001 /* NetworkMonitor.swift */; };
+		AA0100092900000100000001 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100092900000100000001 /* DatabaseManager.swift */; };
+		AA0100102900000100000001 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100102900000100000001 /* KeychainManager.swift */; };
+		AA0100112900000100000001 /* PreferencesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100112900000100000001 /* PreferencesManager.swift */; };
+		AA0100122900000100000001 /* AttendancePunchRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100122900000100000001 /* AttendancePunchRecord.swift */; };
+		AA0100132900000100000001 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100132900000100000001 /* AuthModels.swift */; };
+		AA0100142900000100000001 /* LeaveModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100142900000100000001 /* LeaveModels.swift */; };
+		AA0100152900000100000001 /* PunchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100152900000100000001 /* PunchModels.swift */; };
+		AA0100162900000100000001 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100162900000100000001 /* Resource.swift */; };
+		AA0100172900000100000001 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100172900000100000001 /* User.swift */; };
+		AA0100182900000100000001 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100182900000100000001 /* AuthRepository.swift */; };
+		AA0100192900000100000001 /* AttendanceRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100192900000100000001 /* AttendanceRepository.swift */; };
+		AA0100202900000100000001 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100202900000100000001 /* HomeViewModel.swift */; };
+		AA0100212900000100000001 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100212900000100000001 /* LoginViewModel.swift */; };
+		AA0100222900000100000001 /* PendingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100222900000100000001 /* PendingViewModel.swift */; };
+		AA0100232900000100000001 /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100232900000100000001 /* SignupViewModel.swift */; };
+		AA0100242900000100000001 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100242900000100000001 /* SplashViewModel.swift */; };
+		AA0100252900000100000001 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100252900000100000001 /* LoginScreen.swift */; };
+		AA0100262900000100000001 /* SignupScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100262900000100000001 /* SignupScreen.swift */; };
+		AA0100272900000100000001 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100272900000100000001 /* HomeScreen.swift */; };
+		AA0100282900000100000001 /* PunchRecordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100282900000100000001 /* PunchRecordRow.swift */; };
+		AA0100292900000100000001 /* SelfieCameraModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100292900000100000001 /* SelfieCameraModal.swift */; };
+		AA0100302900000100000001 /* HomeTabContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100302900000100000001 /* HomeTabContent.swift */; };
+		AA0100312900000100000001 /* LeaveRequestTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100312900000100000001 /* LeaveRequestTab.swift */; };
+		AA0100322900000100000001 /* MonthlyCalendarTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100322900000100000001 /* MonthlyCalendarTab.swift */; };
+		AA0100332900000100000001 /* ProfileTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100332900000100000001 /* ProfileTab.swift */; };
+		AA0100342900000100000001 /* PunchesHistoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100342900000100000001 /* PunchesHistoryTab.swift */; };
+		AA0100352900000100000001 /* PendingApprovalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100352900000100000001 /* PendingApprovalScreen.swift */; };
+		AA0100362900000100000001 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100362900000100000001 /* SplashScreen.swift */; };
+		AA0100372900000100000001 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100372900000100000001 /* Colors.swift */; };
+		AA0100382900000100000001 /* CustomCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0100382900000100000001 /* CustomCard.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		BB0000012900000100000001 /* Attendance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Attendance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB0000022900000100000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB0100012900000100000001 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		BB0100022900000100000001 /* AttendanceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceApp.swift; sourceTree = "<group>"; };
+		BB0100032900000100000001 /* CameraCaptureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraCaptureView.swift; sourceTree = "<group>"; };
+		BB0100042900000100000001 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		BB0100052900000100000001 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BB0100062900000100000001 /* APIEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoints.swift; sourceTree = "<group>"; };
+		BB0100072900000100000001 /* MultipartFormData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartFormData.swift; sourceTree = "<group>"; };
+		BB0100082900000100000001 /* NetworkMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkMonitor.swift; sourceTree = "<group>"; };
+		BB0100092900000100000001 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		BB0100102900000100000001 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		BB0100112900000100000001 /* PreferencesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesManager.swift; sourceTree = "<group>"; };
+		BB0100122900000100000001 /* AttendancePunchRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendancePunchRecord.swift; sourceTree = "<group>"; };
+		BB0100132900000100000001 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		BB0100142900000100000001 /* LeaveModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveModels.swift; sourceTree = "<group>"; };
+		BB0100152900000100000001 /* PunchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchModels.swift; sourceTree = "<group>"; };
+		BB0100162900000100000001 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
+		BB0100172900000100000001 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		BB0100182900000100000001 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		BB0100192900000100000001 /* AttendanceRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendanceRepository.swift; sourceTree = "<group>"; };
+		BB0100202900000100000001 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		BB0100212900000100000001 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BB0100222900000100000001 /* PendingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingViewModel.swift; sourceTree = "<group>"; };
+		BB0100232900000100000001 /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
+		BB0100242900000100000001 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		BB0100252900000100000001 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		BB0100262900000100000001 /* SignupScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupScreen.swift; sourceTree = "<group>"; };
+		BB0100272900000100000001 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		BB0100282900000100000001 /* PunchRecordRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchRecordRow.swift; sourceTree = "<group>"; };
+		BB0100292900000100000001 /* SelfieCameraModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfieCameraModal.swift; sourceTree = "<group>"; };
+		BB0100302900000100000001 /* HomeTabContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabContent.swift; sourceTree = "<group>"; };
+		BB0100312900000100000001 /* LeaveRequestTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaveRequestTab.swift; sourceTree = "<group>"; };
+		BB0100322900000100000001 /* MonthlyCalendarTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthlyCalendarTab.swift; sourceTree = "<group>"; };
+		BB0100332900000100000001 /* ProfileTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTab.swift; sourceTree = "<group>"; };
+		BB0100342900000100000001 /* PunchesHistoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PunchesHistoryTab.swift; sourceTree = "<group>"; };
+		BB0100352900000100000001 /* PendingApprovalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingApprovalScreen.swift; sourceTree = "<group>"; };
+		BB0100362900000100000001 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		BB0100372900000100000001 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		BB0100382900000100000001 /* CustomCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCard.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CC0000012900000100000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD0000012900000100000001 = {
+			isa = PBXGroup;
+			children = (
+				DD0000022900000100000001 /* Attendance */,
+				DD0000032900000100000001 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD0000022900000100000001 /* Attendance */ = {
+			isa = PBXGroup;
+			children = (
+				DD0000042900000100000001 /* App */,
+				DD0000052900000100000001 /* Core */,
+				DD0000062900000100000001 /* Models */,
+				DD0000072900000100000001 /* Repositories */,
+				DD0000082900000100000001 /* ViewModels */,
+				DD0000092900000100000001 /* Views */,
+				BB0000022900000100000001 /* Info.plist */,
+			);
+			path = Attendance;
+			sourceTree = "<group>";
+		};
+		DD0000032900000100000001 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BB0000012900000100000001 /* Attendance.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD0000042900000100000001 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100012900000100000001 /* AppConfig.swift */,
+				BB0100022900000100000001 /* AttendanceApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DD0000052900000100000001 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100032900000100000001 /* CameraCaptureView.swift */,
+				BB0100042900000100000001 /* LocationManager.swift */,
+				BB0100052900000100000001 /* APIClient.swift */,
+				BB0100062900000100000001 /* APIEndpoints.swift */,
+				BB0100072900000100000001 /* MultipartFormData.swift */,
+				BB0100082900000100000001 /* NetworkMonitor.swift */,
+				BB0100092900000100000001 /* DatabaseManager.swift */,
+				BB0100102900000100000001 /* KeychainManager.swift */,
+				BB0100112900000100000001 /* PreferencesManager.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		DD0000062900000100000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100122900000100000001 /* AttendancePunchRecord.swift */,
+				BB0100132900000100000001 /* AuthModels.swift */,
+				BB0100142900000100000001 /* LeaveModels.swift */,
+				BB0100152900000100000001 /* PunchModels.swift */,
+				BB0100162900000100000001 /* Resource.swift */,
+				BB0100172900000100000001 /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD0000072900000100000001 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100182900000100000001 /* AuthRepository.swift */,
+				BB0100192900000100000001 /* AttendanceRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DD0000082900000100000001 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100202900000100000001 /* HomeViewModel.swift */,
+				BB0100212900000100000001 /* LoginViewModel.swift */,
+				BB0100222900000100000001 /* PendingViewModel.swift */,
+				BB0100232900000100000001 /* SignupViewModel.swift */,
+				BB0100242900000100000001 /* SplashViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DD0000092900000100000001 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB0100252900000100000001 /* LoginScreen.swift */,
+				BB0100262900000100000001 /* SignupScreen.swift */,
+				BB0100272900000100000001 /* HomeScreen.swift */,
+				BB0100282900000100000001 /* PunchRecordRow.swift */,
+				BB0100292900000100000001 /* SelfieCameraModal.swift */,
+				BB0100302900000100000001 /* HomeTabContent.swift */,
+				BB0100312900000100000001 /* LeaveRequestTab.swift */,
+				BB0100322900000100000001 /* MonthlyCalendarTab.swift */,
+				BB0100332900000100000001 /* ProfileTab.swift */,
+				BB0100342900000100000001 /* PunchesHistoryTab.swift */,
+				BB0100352900000100000001 /* PendingApprovalScreen.swift */,
+				BB0100362900000100000001 /* SplashScreen.swift */,
+				BB0100372900000100000001 /* Colors.swift */,
+				BB0100382900000100000001 /* CustomCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EE0000012900000100000001 /* Attendance */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FF0000012900000100000001 /* Build configuration list for PBXNativeTarget "Attendance" */;
+			buildPhases = (
+				GG0000012900000100000001 /* Sources */,
+				CC0000012900000100000001 /* Frameworks */,
+				HH0000012900000100000001 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Attendance;
+			productName = Attendance;
+			productReference = BB0000012900000100000001 /* Attendance.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		JJ0000012900000100000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EE0000012900000100000001 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = KK0000012900000100000001 /* Build configuration list for PBXProject "Attendance" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD0000012900000100000001;
+			productRefGroup = DD0000032900000100000001 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EE0000012900000100000001 /* Attendance */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		HH0000012900000100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		GG0000012900000100000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA0100012900000100000001 /* AppConfig.swift in Sources */,
+				AA0100022900000100000001 /* AttendanceApp.swift in Sources */,
+				AA0100032900000100000001 /* CameraCaptureView.swift in Sources */,
+				AA0100042900000100000001 /* LocationManager.swift in Sources */,
+				AA0100052900000100000001 /* APIClient.swift in Sources */,
+				AA0100062900000100000001 /* APIEndpoints.swift in Sources */,
+				AA0100072900000100000001 /* MultipartFormData.swift in Sources */,
+				AA0100082900000100000001 /* NetworkMonitor.swift in Sources */,
+				AA0100092900000100000001 /* DatabaseManager.swift in Sources */,
+				AA0100102900000100000001 /* KeychainManager.swift in Sources */,
+				AA0100112900000100000001 /* PreferencesManager.swift in Sources */,
+				AA0100122900000100000001 /* AttendancePunchRecord.swift in Sources */,
+				AA0100132900000100000001 /* AuthModels.swift in Sources */,
+				AA0100142900000100000001 /* LeaveModels.swift in Sources */,
+				AA0100152900000100000001 /* PunchModels.swift in Sources */,
+				AA0100162900000100000001 /* Resource.swift in Sources */,
+				AA0100172900000100000001 /* User.swift in Sources */,
+				AA0100182900000100000001 /* AuthRepository.swift in Sources */,
+				AA0100192900000100000001 /* AttendanceRepository.swift in Sources */,
+				AA0100202900000100000001 /* HomeViewModel.swift in Sources */,
+				AA0100212900000100000001 /* LoginViewModel.swift in Sources */,
+				AA0100222900000100000001 /* PendingViewModel.swift in Sources */,
+				AA0100232900000100000001 /* SignupViewModel.swift in Sources */,
+				AA0100242900000100000001 /* SplashViewModel.swift in Sources */,
+				AA0100252900000100000001 /* LoginScreen.swift in Sources */,
+				AA0100262900000100000001 /* SignupScreen.swift in Sources */,
+				AA0100272900000100000001 /* HomeScreen.swift in Sources */,
+				AA0100282900000100000001 /* PunchRecordRow.swift in Sources */,
+				AA0100292900000100000001 /* SelfieCameraModal.swift in Sources */,
+				AA0100302900000100000001 /* HomeTabContent.swift in Sources */,
+				AA0100312900000100000001 /* LeaveRequestTab.swift in Sources */,
+				AA0100322900000100000001 /* MonthlyCalendarTab.swift in Sources */,
+				AA0100332900000100000001 /* ProfileTab.swift in Sources */,
+				AA0100342900000100000001 /* PunchesHistoryTab.swift in Sources */,
+				AA0100352900000100000001 /* PendingApprovalScreen.swift in Sources */,
+				AA0100362900000100000001 /* SplashScreen.swift in Sources */,
+				AA0100372900000100000001 /* Colors.swift in Sources */,
+				AA0100382900000100000001 /* CustomCard.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		LL0000012900000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		LL0000022900000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		MM0000012900000100000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Attendance/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "MNIT Attendance";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mnitsolutions.attendance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		MM0000022900000100000001 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Attendance/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "MNIT Attendance";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mnitsolutions.attendance;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		KK0000012900000100000001 /* Build configuration list for PBXProject "Attendance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				LL0000012900000100000001 /* Debug */,
+				LL0000022900000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FF0000012900000100000001 /* Build configuration list for PBXNativeTarget "Attendance" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				MM0000012900000100000001 /* Debug */,
+				MM0000022900000100000001 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = JJ0000012900000100000001 /* Project object */;
+}
+

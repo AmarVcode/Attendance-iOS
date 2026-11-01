@@ -1,0 +1,89 @@
+name: Build iOS IPA Package
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+    inputs:
+      build_configuration:
+        description: 'Build Configuration (Release or Debug)'
+        required: true
+        default: 'Release'
+        type: choice
+        options:
+          - Release
+          - Debug
+
+jobs:
+  build-ipa:
+    name: Build & Package Attendance IPA
+    runs-on: macos-14
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Display Xcode Environment
+        run: |
+          echo "Available Xcode installations:"
+          ls -d /Applications/Xcode* || true
+          xcodebuild -version
+
+      - name: Select Xcode Version
+        run: |
+          if [ -d "/Applications/Xcode_15.4.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_15.4.app
+          elif [ -d "/Applications/Xcode_15.3.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_15.3.app
+          elif [ -d "/Applications/Xcode_16.0.app" ]; then
+            sudo xcode-select -s /Applications/Xcode_16.0.app
+          fi
+          xcodebuild -version
+
+      - name: Build & Archive iOS App
+        working-directory: ios
+        run: |
+          mkdir -p build
+          
+          echo "Building Attendance target..."
+          xcodebuild archive \
+            -project Attendance.xcodeproj \
+            -scheme Attendance \
+            -configuration ${{ inputs.build_configuration || 'Release' }} \
+            -destination "generic/platform=iOS" \
+            -archivePath build/Attendance.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            AD_HOC_CODE_SIGNING_ALLOWED=YES
+
+      - name: Package .app into .ipa
+        working-directory: ios
+        run: |
+          echo "Creating Payload structure..."
+          rm -rf Payload Attendance.ipa
+          mkdir -p Payload
+          
+          # Copy .app bundle from xcarchive
+          APP_PATH=$(find build/Attendance.xcarchive -name "*.app" -type d | head -n 1)
+          if [ -z "$APP_PATH" ]; then
+            echo "Error: Attendance.app not found in archive."
+            exit 1
+          fi
+          
+          echo "Found app bundle at: $APP_PATH"
+          cp -R "$APP_PATH" Payload/
+          
+          # Zip into .ipa package
+          zip -r -9 Attendance.ipa Payload
+          echo "Generated Attendance.ipa successfully!"
+          ls -lh Attendance.ipa
+
+      - name: Upload .ipa to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Attendance-iOS-${{ github.sha }}
+          path: ios/Attendance.ipa
+          if-no-files-found: error
+          retention-days: 14

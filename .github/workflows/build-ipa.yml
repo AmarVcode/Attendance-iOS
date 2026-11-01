@@ -1,4 +1,4 @@
-name: Build iOS IPA Package
+name: Build iOS IPA & Simulator Package
 
 on:
   push:
@@ -16,7 +16,7 @@ on:
 
 jobs:
   build-ipa:
-    name: Build & Package Attendance IPA
+    name: Build & Package Attendance IPA & Simulator (Appetize)
     runs-on: macos-14
     timeout-minutes: 45
     permissions:
@@ -43,12 +43,12 @@ jobs:
           fi
           xcodebuild -version
 
-      - name: Build & Archive iOS App
+      - name: Build & Archive iOS App (Device .ipa)
         working-directory: ios
         run: |
           mkdir -p build
           
-          echo "Building Attendance target..."
+          echo "Building Attendance target for physical devices..."
           xcodebuild archive \
             -project Attendance.xcodeproj \
             -scheme Attendance \
@@ -84,17 +84,59 @@ jobs:
           echo "Generated Attendance.ipa successfully!"
           ls -lh Attendance.ipa
 
+      - name: Build for iOS Simulator (Appetize.io)
+        working-directory: ios
+        run: |
+          echo "Building Attendance for iOS Simulator (Appetize.io)..."
+          xcodebuild build \
+            -project Attendance.xcodeproj \
+            -scheme Attendance \
+            -configuration ${{ inputs.build_configuration || 'Release' }} \
+            -destination "generic/platform=iOS Simulator" \
+            -derivedDataPath build/derivedData \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            CODE_SIGN_STYLE=Manual \
+            DEVELOPMENT_TEAM=""
+          
+          SIM_APP_PATH=$(find build/derivedData/Build/Products -name "Attendance.app" -type d | head -n 1)
+          if [ -z "$SIM_APP_PATH" ]; then
+            echo "Error: Attendance.app simulator build not found."
+            exit 1
+          fi
+          
+          echo "Found simulator app bundle at: $SIM_APP_PATH"
+          APP_DIR=$(dirname "$SIM_APP_PATH")
+          APP_NAME=$(basename "$SIM_APP_PATH")
+          
+          # Appetize.io requires Attendance.app at the root of the zip file
+          cd "$APP_DIR"
+          zip -r -9 Attendance-Appetize.zip "$APP_NAME"
+          mv Attendance-Appetize.zip ../../../
+          cd ../../../
+          echo "Generated Attendance-Appetize.zip successfully!"
+          ls -lh Attendance-Appetize.zip
+
       - name: Upload .ipa to GitHub Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Attendance-iOS-${{ github.sha }}
+          name: Attendance-iOS-Device-${{ github.sha }}
           path: ios/Attendance.ipa
           if-no-files-found: error
           retention-days: 14
 
-      - name: Publish .ipa to GitHub Release
+      - name: Upload Appetize Simulator Zip to GitHub Artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: Attendance-Appetize-Simulator-${{ github.sha }}
+          path: ios/Attendance-Appetize.zip
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Publish to GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          gh release create v1.0.1 ios/Attendance.ipa --title "MNIT Attendance iOS v1.0.1" --notes "Official native iOS release package (.ipa) without autofilled credentials or registration." || \
-          gh release upload v1.0.1 ios/Attendance.ipa --clobber
+          gh release create v1.0.2 ios/Attendance.ipa ios/Attendance-Appetize.zip --title "MNIT Attendance iOS v1.0.2 (IPA + Appetize Simulator)" --notes "Release containing Attendance.ipa (for device installation) and Attendance-Appetize.zip (ready for Appetize.io browser testing)." || \
+          gh release upload v1.0.2 ios/Attendance.ipa ios/Attendance-Appetize.zip --clobber

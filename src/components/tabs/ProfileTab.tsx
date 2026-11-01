@@ -162,6 +162,29 @@ export const ProfileTab: React.FC<ProfileTabProps> = ({
         </div>
       </CustomCard>
 
+      {/* Download Native iOS Package (.ipa) */}
+      <CustomCard className="border-indigo-100 bg-gradient-to-r from-indigo-50/60 to-purple-50/40">
+        <div className="flex items-center justify-between">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold shadow-md shadow-indigo-600/20">
+              <span className="text-xs">IPA</span>
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 text-sm">Native iOS App Package (.ipa)</h3>
+              <p className="text-[11px] text-slate-500">Official v1.0.0 Release • Ready to Sideload / Distribute</p>
+            </div>
+          </div>
+
+          <a
+            href="/Attendance.ipa"
+            download="Attendance.ipa"
+            className="px-3.5 py-2 bg-indigo-600 hover:bg-indigo-700 active:scale-95 text-white font-bold text-xs rounded-xl shadow-md transition flex items-center gap-1.5"
+          >
+            Download .ipa
+          </a>
+        </div>
+      </CustomCard>
+
       {/* 3. Sign Out Button */}
       <CustomCard className="border-rose-100">
         <button

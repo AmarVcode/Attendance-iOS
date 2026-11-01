@@ -22,8 +22,9 @@ public final class AuthRepository {
 
     public func login(email: String, password: String) async -> Resource<LoginResponse> {
         let deviceUid = keychain.getOrGenerateDeviceUID()
-        let model = "\(UIDevice.current.model) (\(UIDevice.current.name))"
-        let osVersion = "iOS \(UIDevice.current.systemVersion)"
+        let (model, osVersion) = await MainActor.run {
+            ("\(UIDevice.current.model) (\(UIDevice.current.name))", "iOS \(UIDevice.current.systemVersion)")
+        }
 
         let request = LoginRequest(
             email: email,

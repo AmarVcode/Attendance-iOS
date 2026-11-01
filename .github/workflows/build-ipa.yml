@@ -112,9 +112,8 @@ jobs:
           
           # Appetize.io requires Attendance.app at the root of the zip file
           cd "$APP_DIR"
-          zip -r -9 Attendance-Appetize.zip "$APP_NAME"
-          mv Attendance-Appetize.zip ../../../
-          cd ../../../
+          zip -r -9 "$GITHUB_WORKSPACE/ios/Attendance-Appetize.zip" "$APP_NAME"
+          cd -
           echo "Generated Attendance-Appetize.zip successfully!"
           ls -lh Attendance-Appetize.zip
 

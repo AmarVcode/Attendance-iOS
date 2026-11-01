@@ -19,6 +19,8 @@ jobs:
     name: Build & Package Attendance IPA
     runs-on: macos-14
     timeout-minutes: 45
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout Source Code
@@ -89,3 +91,10 @@ jobs:
           path: ios/Attendance.ipa
           if-no-files-found: error
           retention-days: 14
+
+      - name: Publish .ipa to GitHub Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh release create v1.0.1 ios/Attendance.ipa --title "MNIT Attendance iOS v1.0.1" --notes "Official native iOS release package (.ipa) without autofilled credentials or registration." || \
+          gh release upload v1.0.1 ios/Attendance.ipa --clobber

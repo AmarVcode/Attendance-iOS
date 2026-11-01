@@ -22,7 +22,6 @@ export default function App() {
         <LoginScreen
           onNavigateToHome={() => setCurrentScreen('HOME')}
           onNavigateToPending={() => setCurrentScreen('PENDING')}
-          onNavigateToSignup={() => setCurrentScreen('SIGNUP')}
         />
       )}
 

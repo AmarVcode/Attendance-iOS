@@ -6,16 +6,14 @@ import { StorageService } from '../../services/storage';
 interface LoginScreenProps {
   onNavigateToHome: () => void;
   onNavigateToPending: () => void;
-  onNavigateToSignup: () => void;
 }
 
 export const LoginScreen: React.FC<LoginScreenProps> = ({
   onNavigateToHome,
   onNavigateToPending,
-  onNavigateToSignup,
 }) => {
-  const [email, setEmail] = useState('test@mnitsolutions.in');
-  const [password, setPassword] = useState('password123');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -65,11 +63,6 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
     } finally {
       setIsLoading(false);
     }
-  };
-
-  const fillDemoAccount = () => {
-    setEmail('test@mnitsolutions.in');
-    setPassword('password123');
   };
 
   return (
@@ -217,30 +210,12 @@ export const LoginScreen: React.FC<LoginScreenProps> = ({
             </button>
           </form>
 
-          {/* Quick Demo Credentials shortcut */}
-          <div className="mt-5 pt-4 border-t border-slate-100">
-            <button
-              type="button"
-              onClick={fillDemoAccount}
-              className="w-full py-2 px-3 text-xs font-semibold text-indigo-700 hover:text-indigo-900 bg-indigo-50/70 hover:bg-indigo-100/70 rounded-lg transition text-center"
-            >
-              Fill Sample Credentials (test@mnitsolutions.in / password123)
-            </button>
+          {/* Administrator Provisioning Notice */}
+          <div className="mt-5 p-3 rounded-xl bg-slate-50 border border-slate-200/80 text-center">
+            <p className="text-xs text-slate-500 leading-relaxed">
+              Employee accounts are created directly by your company administrator. Please contact your company HR/Admin for your login credentials.
+            </p>
           </div>
-        </div>
-
-        {/* Footer Link to Signup */}
-        <div className="text-center mt-6">
-          <p className="text-sm text-slate-600">
-            New employee at MNIT?{' '}
-            <button
-              type="button"
-              onClick={onNavigateToSignup}
-              className="font-bold text-indigo-600 hover:text-indigo-800 transition"
-            >
-              Register your device
-            </button>
-          </p>
         </div>
       </div>
     </div>
